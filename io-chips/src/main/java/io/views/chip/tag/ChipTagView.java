@@ -23,7 +23,6 @@ import java.util.List;
 
 public class ChipTagView extends FrameLayout {
 
-    TextView hintTxt;
     ViewFlipper viewFlipper;
     FlowLayout flowLayout;
 
@@ -63,14 +62,9 @@ public class ChipTagView extends FrameLayout {
     }
 
 
-    @Override
-    public void setOnClickListener(@Nullable OnClickListener l) {
-        hintTxt.setOnClickListener(l);
-    }
 
     void init(AttributeSet attrs) {
         inflate(getContext(), R.layout.chip_tag_view, this);
-        hintTxt = findViewById(R.id.hint_textview);
         viewFlipper = findViewById(R.id.chip_flipper);
         flowLayout = findViewById(R.id.chip_tag_flow_layout);
         if (attrs != null) {
@@ -85,9 +79,6 @@ public class ChipTagView extends FrameLayout {
         }
     }
 
-    public void setHint(String hint){
-        hintTxt.setText(hint);
-    }
 
     public Chip getChip(long id) {
         for (int i = 0; i < flowLayout.getChildCount(); i++) {
