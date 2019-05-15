@@ -75,7 +75,7 @@ public class ChipTagView extends FrameLayout {
         flowLayout = findViewById(R.id.chip_tag_flow_layout);
         if (attrs != null) {
             TypedArray ta = getContext().getTheme().obtainStyledAttributes(attrs, R.styleable.IoChipTagView, 0, 0);
-            hintTxt.setText(ta.getString(R.styleable.IoChipTagView_chip_hint));
+            setHint(ta.getString(R.styleable.IoChipTagView_chip_hint));
             chip_background_color = ta.getColor(R.styleable.IoChipTagView_chip_background_color, ContextCompat.getColor(getContext(), R.color.chip_background_color));
             chip_text_color = ta.getColor(R.styleable.IoChipTagView_chip_text_color, ContextCompat.getColor(getContext(), R.color.chip_text_color));
             chip_close_color = ta.getColor(R.styleable.IoChipTagView_chip_close_color, ContextCompat.getColor(getContext(), R.color.chip_close_color));
@@ -83,6 +83,10 @@ public class ChipTagView extends FrameLayout {
             chipStyle = ChipStyle.values()[ta.getInt(R.styleable.IoChipTagView_chip_style, 0)];
             ta.recycle();
         }
+    }
+
+    public void setHint(String hint){
+        hintTxt.setText(hint);
     }
 
     public Chip getChip(long id) {
