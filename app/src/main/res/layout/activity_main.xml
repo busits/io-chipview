@@ -15,7 +15,6 @@
         app:chip_close_color="@android:color/white"
         app:chip_style="rect_with_image"
         app:chip_closable="true"
-        app:chip_hint="Select project tag..."
         app:chip_text_color="@android:color/white" />
 
 

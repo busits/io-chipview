@@ -23,9 +23,7 @@ import java.util.List;
 
 public class ChipTagView extends FrameLayout {
 
-    ViewFlipper viewFlipper;
     FlowLayout flowLayout;
-
     boolean chip_closable;
     int chip_background_color, chip_text_color, chip_close_color;
     ChipStyle chipStyle;
@@ -65,11 +63,9 @@ public class ChipTagView extends FrameLayout {
 
     void init(AttributeSet attrs) {
         inflate(getContext(), R.layout.chip_tag_view, this);
-        viewFlipper = findViewById(R.id.chip_flipper);
         flowLayout = findViewById(R.id.chip_tag_flow_layout);
         if (attrs != null) {
             TypedArray ta = getContext().getTheme().obtainStyledAttributes(attrs, R.styleable.IoChipTagView, 0, 0);
-            setHint(ta.getString(R.styleable.IoChipTagView_chip_hint));
             chip_background_color = ta.getColor(R.styleable.IoChipTagView_chip_background_color, ContextCompat.getColor(getContext(), R.color.chip_background_color));
             chip_text_color = ta.getColor(R.styleable.IoChipTagView_chip_text_color, ContextCompat.getColor(getContext(), R.color.chip_text_color));
             chip_close_color = ta.getColor(R.styleable.IoChipTagView_chip_close_color, ContextCompat.getColor(getContext(), R.color.chip_close_color));
@@ -189,7 +185,6 @@ public class ChipTagView extends FrameLayout {
                         listener.onImageReady(chip, firstIcon);
                     break;
             }
-            invalidateHint();
         }
     }
 
@@ -198,7 +193,6 @@ public class ChipTagView extends FrameLayout {
             Chip tagModel = (Chip) flowLayout.getChildAt(i).getTag();
             if (tagModel.id == id) {
                 flowLayout.removeViewAt(i);
-                invalidateHint();
             }
         }
     }
@@ -227,11 +221,5 @@ public class ChipTagView extends FrameLayout {
         return new ArrayList<>(Arrays.asList(getChips()));
     }
 
-    private void invalidateHint() {
-        if (flowLayout.getChildCount() == 0)
-            viewFlipper.setDisplayedChild(0);
-        else
-            viewFlipper.setDisplayedChild(1);
-    }
 
 }
