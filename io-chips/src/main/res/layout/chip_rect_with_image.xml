@@ -24,6 +24,8 @@
 
         <TextView
             android:layout_toRightOf="@+id/io_icon"
+            android:lines="1"
+            android:ellipsize="end"
             android:textSize="15sp"
             android:id="@+id/io_chip_text"
             android:textColor="@android:color/white"

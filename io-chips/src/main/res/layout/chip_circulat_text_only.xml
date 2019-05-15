@@ -19,6 +19,8 @@
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@+id/io_icon"
             android:textSize="15sp"
+            android:lines="1"
+            android:ellipsize="end"
             android:id="@+id/io_chip_text"
             android:textColor="@android:color/white"
             android:layout_centerVertical="true"
