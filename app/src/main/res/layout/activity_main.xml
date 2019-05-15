@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@android:color/white"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <io.views.chip.tag.ChipTagView
+        android:id="@+id/chip_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:chip_background_color="@color/chip_background_color"
+        app:chip_close_color="@android:color/white"
+        app:chip_style="rect_with_image"
+        app:chip_closable="true"
+        app:chip_hint="Select project tag..."
+        app:chip_text_color="@android:color/white" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="add"
+        android:text="Add" />
+
+
+</LinearLayout>
