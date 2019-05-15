@@ -86,6 +86,10 @@ public class ChipTagView extends FrameLayout {
     }
 
     public boolean addChip(final Chip chip) {
+       return addChip(chip,chipStyle);
+    }
+
+    public boolean addChip(final Chip chip,ChipStyle chipStyle) {
         if (getChip(chip.id) == null) {
             View chipLayout;
             TextView chipText;

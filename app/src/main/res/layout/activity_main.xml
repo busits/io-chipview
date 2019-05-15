@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         app:chip_background_color="@color/chip_background_color"
         app:chip_close_color="@android:color/white"
-        app:chip_style="rect_with_image"
+        app:chip_style="circular_text_only"
         app:chip_closable="true"
         app:chip_text_color="@android:color/white" />
 
