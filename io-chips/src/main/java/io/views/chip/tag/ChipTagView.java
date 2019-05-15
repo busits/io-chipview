@@ -85,7 +85,7 @@ public class ChipTagView extends FrameLayout {
         return null;
     }
 
-    public void addChip(final Chip chip) {
+    public boolean addChip(final Chip chip) {
         if (getChip(chip.id) == null) {
             View chipLayout;
             TextView chipText;
@@ -185,7 +185,9 @@ public class ChipTagView extends FrameLayout {
                         listener.onImageReady(chip, firstIcon);
                     break;
             }
+            return true;
         }
+        return false;
     }
 
     public void removeChip(long id) {
