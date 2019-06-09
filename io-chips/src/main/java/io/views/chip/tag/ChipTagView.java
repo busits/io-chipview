@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.ViewFlipper;
 
 import com.nex3z.flowlayout.FlowLayout;
 
@@ -62,7 +61,7 @@ public class ChipTagView extends FrameLayout {
 
 
     void init(AttributeSet attrs) {
-        inflate(getContext(), R.layout.chip_tag_view, this);
+        inflate(getContext(), R.layout.io_chip_tag_view, this);
         flowLayout = findViewById(R.id.chip_tag_flow_layout);
         if (attrs != null) {
             TypedArray ta = getContext().getTheme().obtainStyledAttributes(attrs, R.styleable.IoChipTagView, 0, 0);
@@ -98,7 +97,7 @@ public class ChipTagView extends FrameLayout {
             ImageView firstIcon;
             switch (chipStyle) {
                 case circular_with_image:
-                    chipLayout = LayoutInflater.from(getContext()).inflate(R.layout.chip_circular_with_image, null);
+                    chipLayout = LayoutInflater.from(getContext()).inflate(R.layout.io_chip_circular_with_image, null);
                     chipLayout.setTag(chip);
                     chipText = chipLayout.findViewById(R.id.io_chip_text);
                     chipText.setTextColor(chip_text_color);
@@ -122,7 +121,7 @@ public class ChipTagView extends FrameLayout {
                         listener.onImageReady(chip, firstIcon);
                     break;
                 case circular_text_only:
-                    chipLayout = LayoutInflater.from(getContext()).inflate(R.layout.chip_circulat_text_only, null);
+                    chipLayout = LayoutInflater.from(getContext()).inflate(R.layout.io_chip_circulat_text_only, null);
                     chipLayout.setTag(chip);
                     chipText = chipLayout.findViewById(R.id.io_chip_text);
                     chipText.setTextColor(chip_text_color);
@@ -143,7 +142,7 @@ public class ChipTagView extends FrameLayout {
                     flowLayout.addView(chipLayout);
                     break;
                 case rect_text_only:
-                    chipLayout = LayoutInflater.from(getContext()).inflate(R.layout.chip_rect_text_only, null);
+                    chipLayout = LayoutInflater.from(getContext()).inflate(R.layout.io_chip_rect_text_only, null);
                     chipLayout.setTag(chip);
                     chipText = chipLayout.findViewById(R.id.io_chip_text);
                     chipText.setTextColor(chip_text_color);
@@ -165,7 +164,7 @@ public class ChipTagView extends FrameLayout {
                     break;
 
                 case rect_with_image:
-                    chipLayout = LayoutInflater.from(getContext()).inflate(R.layout.chip_rect_with_image, null);
+                    chipLayout = LayoutInflater.from(getContext()).inflate(R.layout.io_chip_rect_with_image, null);
                     chipLayout.setTag(chip);
                     chipText = chipLayout.findViewById(R.id.io_chip_text);
                     chipText.setTextColor(chip_text_color);
